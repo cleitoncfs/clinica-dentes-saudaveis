@@ -1,0 +1,19 @@
+.botao-topo {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #171d3f;
+    color: #fff;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+
+.botao-topo:hover {
+    background-color: #0f1230;
+}

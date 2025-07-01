@@ -1,0 +1,152 @@
+/* Estilo base do topo */
+.topo {
+    background-color: #1b3675;
+    border-bottom: 1px solid #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.topo-conteudo {
+    max-width: 1024px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    margin: 0 auto;
+}
+
+.topo-logo-box {
+    display: flex;
+    align-items: center;
+}
+
+.topo-logo {
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+}
+
+.topo-nome-empresa {
+    color: #fff;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+/* Links do menu */
+.topo-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0px 15px 10px 15px;
+    text-transform: uppercase;
+    line-height: 18px;
+    font-weight: 600;
+}
+
+.topo-link:hover {
+    border-bottom: 3px solid #fff;
+}
+
+/* Menu tradicional - visível a partir de 1025px */
+@media (min-width: 1025px) {
+    .topo-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .topo-menu-botao {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .topo-nome-empresa {
+        font-size: 14px;
+        max-width: 160px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+    }
+}
+
+/* Oculta o nome da empresa em telas pequenas */
+/* @media (max-width: 600px) {
+    .topo-nome-empresa {
+        display: none;
+    }
+
+    .lista-sobre-aparelho {
+        flex-direction: column;
+    }
+} */
+
+/* Menu mobile (hambúrguer) - ativado até 1024px */
+@media (max-width: 1024px) {
+    .topo-menu-botao {
+        display: block;
+        background: none;
+        color: white;
+        font-size: 28px;
+        border: none;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .topo-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #1b3675;
+        flex-direction: column;
+        text-align: center;
+        transition: max-height 0.3s ease-in-out;
+        overflow: hidden;
+    }
+
+    .topo-links.aberto {
+        display: flex;
+        max-height: 300px;
+    }
+
+    .topo-link {
+        padding: 15px 0;
+        border-bottom: 1px solid white;
+    }
+}
+
+/* Animação do botão hambúrguer (3 linhas que viram X) */
+.topo-menu-botao.linhas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.topo-menu-botao.linhas span {
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.topo-menu-botao.linhas.ativo span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+}
+
+.topo-menu-botao.linhas.ativo span:nth-child(2) {
+    opacity: 0;
+}
+
+.topo-menu-botao.linhas.ativo span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}

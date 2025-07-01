@@ -1,0 +1,62 @@
+.rodape-personalizado {
+    background-color: #171d3f;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.rodape-conteudo {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.rodape-logo img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.rodape-info p,
+.rodape-legenda p {
+    margin: 5px 0;
+}
+
+.rodape-info a {
+    color: #61dafb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.rodape-info a:hover {
+    text-decoration: underline;
+}
+
+.rodape-legenda a {
+    color: #fff;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+@media (min-width: 768px) {
+    .rodape-conteudo {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .rodape-info,
+    .rodape-legenda {
+        flex: 1;
+    }
+
+    .rodape-logo {
+        flex: 0 0 auto;
+    }
+}
